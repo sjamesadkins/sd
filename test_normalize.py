@@ -11,4 +11,7 @@ def test_preserves_single_newlines_between_lines():
     text = "alpha\nbeta\n gamma"
     assert normalize_whitespace(text) == "alpha\nbeta\ngamma"
 
-
+def test_trims_unicode_nonbreaking_space():
+    # \u00A0 is a non-breaking space
+    text = "\u00A0hello\u00A0world\u00A0"
+    assert normalize_whitespace(text) == "hello world"

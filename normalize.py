@@ -2,6 +2,7 @@
 import re
 
 def normalize_whitespace(text: str) -> str:
+    text = text.replace("\u00A0", " ")
     text = text.strip()
     lines = text.splitlines()
     cleaned = []
