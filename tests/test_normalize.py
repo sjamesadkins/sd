@@ -1,4 +1,4 @@
-from sd.normalize import normalize_whitespace
+from sdsrc.normalize import normalize_whitespace
 
 def test_collapses_spaces_tabs_and_trims():
     assert normalize_whitespace(" hi  there\t friend ") == "hi there friend"

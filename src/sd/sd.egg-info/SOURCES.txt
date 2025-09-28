@@ -1,9 +1,0 @@
-pyproject.toml
-src/__init__.py
-src/normalize.py
-src/sd.egg-info/PKG-INFO
-src/sd.egg-info/SOURCES.txt
-src/sd.egg-info/dependency_links.txt
-src/sd.egg-info/requires.txt
-src/sd.egg-info/top_level.txt
-tests/test_normalize.py
