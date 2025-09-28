@@ -1,0 +1,34 @@
+import pytest
+from sdsrc.textutils import count_words
+from sdsrc.textutils import reverse_words
+
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("one two three", 3),
+        ("   spaced   out   ", 2),
+        ("", 0),
+        ("Hello, world!", 2),
+        ("Wait... what?!", 2),
+        ("Python's great", 2),
+        ("hi, hi, hi", 3),
+        ("end.", 1),
+    ],
+)
+
+def test_count_words_various_cases(text, expected):
+    assert count_words(text) == expected
+
+
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("one two three", "three two one"),
+        ("   spaced    out     ", "out spaced"),
+        ("", ""),
+        ("Hello, world!", "world Hello"),
+    ],
+)
+
+def test_reverse_words_various_cases(text, expected):
+    assert reverse_words(text) == expected
