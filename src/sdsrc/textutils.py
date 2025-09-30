@@ -49,3 +49,15 @@ def summarize_text(text: str) -> dict:
         counts[word] = counts.get(word, 0) + 1
 
     return {"word_count": len(words), "frequencies": counts}
+
+
+def top_n_words(text: str, number: int) -> list[tuple[str, int]]:
+    """
+    Return the top N most frequent words in the text as (word, count) pairs.
+    """
+    words = re.findall(r"[A-Za-z0-9']+", text.lower())
+    counts: dict[str, int] = {}
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+    sorted_items = sorted(counts.items(), key=lambda item: item[1], reverse=True)
+    return sorted_items[:number]

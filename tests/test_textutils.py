@@ -1,9 +1,11 @@
 import pytest
-from sdsrc.textutils import count_words, reverse_words, word_frequencies, summarize_text
-
-# from sdsrc.textutils import reverse_words
-# from sdsrc.textutils import word_frequencies
-# from sdsrc.textutils import summarize_text
+from sdsrc.textutils import (
+    count_words,
+    reverse_words,
+    word_frequencies,
+    summarize_text,
+    top_n_words,
+)
 
 
 @pytest.mark.parametrize(
@@ -53,3 +55,9 @@ def test_summarize_text_basic():
     result = summarize_text("Hello,     hello world!")
     assert result["word_count"] == 3
     assert result["frequencies"] == {"hello": 2, "world": 1}
+
+
+def test_top_n_words_basic():
+    text = "one two two three three three"
+    result = top_n_words(text, 2)
+    assert result == [("three", 3), ("two", 2)]
