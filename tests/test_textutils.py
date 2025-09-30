@@ -1,8 +1,10 @@
 import pytest
 from sdsrc.textutils import count_words, reverse_words, word_frequencies, summarize_text
+
 # from sdsrc.textutils import reverse_words
 # from sdsrc.textutils import word_frequencies
 # from sdsrc.textutils import summarize_text
+
 
 @pytest.mark.parametrize(
     "text, expected",
@@ -17,7 +19,6 @@ from sdsrc.textutils import count_words, reverse_words, word_frequencies, summar
         ("end.", 1),
     ],
 )
-
 def test_count_words_various_cases(text, expected):
     assert count_words(text) == expected
 
@@ -31,7 +32,6 @@ def test_count_words_various_cases(text, expected):
         ("Hello, world!", "world Hello"),
     ],
 )
-
 def test_reverse_words_various_cases(text, expected):
     assert reverse_words(text) == expected
 
@@ -45,7 +45,6 @@ def test_reverse_words_various_cases(text, expected):
         ("Hi!, Hi, hi.", {"hi": 3}),
     ],
 )
-
 def test_word_frequencies_various_cases(text, expected):
     assert word_frequencies(text) == expected
 

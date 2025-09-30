@@ -1,8 +1,9 @@
 # normalize.py
 import re
 
+
 def normalize_whitespace(text: str) -> str:
-    text = text.replace("\u00A0", " ")
+    text = text.replace("\u00a0", " ")
     text = text.strip()
     lines = text.splitlines()
     cleaned = []
@@ -12,11 +13,9 @@ def normalize_whitespace(text: str) -> str:
     compact = []
     prev_blank = False
     for line in cleaned:
-        is_blank = (line == "")
+        is_blank = line == ""
         if is_blank and prev_blank:
             continue
         compact.append(line)
         prev_blank = is_blank
     return "\n".join(compact)
-
-
