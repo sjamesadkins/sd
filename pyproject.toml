@@ -8,9 +8,14 @@ version = "0.0.1"
 description = "Whitespace normalizer kata"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
     "pytest",
-    "pre-commit"
+    "pre-commit",
+    "black",
+    "ruff",
 ]
 
 [tool.setuptools.packages.find]
