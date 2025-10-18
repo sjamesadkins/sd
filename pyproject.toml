@@ -16,6 +16,7 @@ dev = [
     "pre-commit",
     "black",
     "ruff",
+    "mypy",
 ]
 
 [tool.setuptools.packages.find]
@@ -25,3 +26,12 @@ where = ["src"]
 pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-q"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+ignore_missing_imports = true
+
