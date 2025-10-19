@@ -18,6 +18,8 @@ dev = [
     "black",
     "ruff",
     "mypy",
+    "fastapi",
+    "uvicorn",
 ]
 
 [tool.setuptools.packages.find]
