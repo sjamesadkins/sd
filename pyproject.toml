@@ -24,6 +24,8 @@ dev = [
     "fastapi",
     "uvicorn",
     "click",
+    "jinja2",
+    "python-multipart",
 ]
 
 [tool.setuptools.packages.find]
